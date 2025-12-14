@@ -1,0 +1,9 @@
+torch
+torchvision
+torchaudio
+transformers
+easyocr
+opencv-python
+pillow
+scikit-learn
+numpy
