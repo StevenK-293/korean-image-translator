@@ -1,0 +1,15 @@
+torch
+torchvision
+numpy
+opencv-python
+Pillow
+easyocr
+pytesseract
+transformers
+sentencepiece
+deep-translator
+openai
+anthropic
+google-generativeai
+requests
+matplotlib
