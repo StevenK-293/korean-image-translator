@@ -34,7 +34,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 class SettingsManager:
     def __init__(self):
-        self.settings_file = "scanlation_settings.json"
+        self.settings_file = "translation_settings.json"
         self.default_settings = {
             "api_keys": {
                 "openai": "",
@@ -417,7 +417,7 @@ class ImageEnhancer:
     def auto_contrast(image):
         return ImageOps.autocontrast(image, cutoff=2)
 
-class ScanlationToolkit:
+class TranslationsToolkit:
     def __init__(self):
         self.redraw_history = []
     
@@ -520,7 +520,7 @@ class Translations_ToolKit:
         self.text_remover = TextRemover()
         self.bubble_detector = SpeechBubbleDetector()
         self.image_enhancer = ImageEnhancer()
-        self.toolkit = ScanlationToolkit()
+        self.toolkit = TranslationsToolkit()
         
         self.setup_variables()
         self.create_gui()
@@ -830,7 +830,7 @@ class Translations_ToolKit:
         tab = ttk.Frame(notebook)
         notebook.add(tab, text="🛠️ Tools")
         
-        ttk.Label(tab, text="Scanlation Tools:").pack(anchor=tk.W, pady=(10, 0), padx=5)
+        ttk.Label(tab, text="Translation Tools:").pack(anchor=tk.W, pady=(10, 0), padx=5)
         
         ttk.Button(tab, text="🧹 Clean Scan", command=self.clean_current_image).pack(fill=tk.X, pady=5, padx=5)
         ttk.Button(tab, text="🎨 Manga Effects", command=self.apply_manga_effects).pack(fill=tk.X, pady=2, padx=5)
