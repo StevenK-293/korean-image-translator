@@ -114,9 +114,9 @@ class TranslationManager:
         self.settings = settings_manager
         self.models = {}
         self.clients = {}
-        self.initialize_models()
+        self.loading_models()
     
-    def initialize_models(self):
+    def loading_models(self):
         try:
             #  will add more models later
             self.tokenizer = MarianTokenizer.from_pretrained("Helsinki-NLP/opus-mt-ko-en")
@@ -507,7 +507,7 @@ class ModernTkinterTheme:
             'error_color': error_color
         }
 
-class ScanlationStudioPro:
+class Translations_ToolKit:
     def __init__(self, master):
         self.master = master
         self.master.title("Translation Toolkit")
@@ -2244,7 +2244,7 @@ class ScanlationStudioPro:
         self.settings.settings["text"]["bubble_fill"] = self.bubble_fill_var.get()
         
         self.settings.save_settings()
-        self.translator.initialize_models()
+        self.translator.loading_models()
         
         window.destroy()
         self.update_status("Settings saved successfully")
@@ -2264,7 +2264,7 @@ class ScanlationStudioPro:
 
 def main():
     root = tk.Tk()
-    app = ScanlationStudioPro(root)
+    app = Translations_ToolKit(root)
     root.mainloop()
 
 if __name__ == "__main__":
